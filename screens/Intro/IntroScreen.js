@@ -2,6 +2,7 @@ import { View, Text, Dimensions, StyleSheet, Image } from 'react-native'
 import React from 'react'
 import PrimaryButton from '../../components/PrimaryButton';
 import { useNavigation } from '@react-navigation/native';
+import { StatusBar } from 'expo-status-bar';
 
 
 
@@ -18,6 +19,8 @@ export default function IntroScreen() {
 
 
   return (
+    <>
+    <StatusBar style='inverted' />
     <View style={styles.root}>
       <Image source={require('../../assets/images/login.png')} style={styles.image}/>
       <View style={styles.textContainer}>
@@ -26,6 +29,7 @@ export default function IntroScreen() {
             <PrimaryButton text='Get Started' textColor='black' textSize={30} buttonColor='orange' onPress={pageHandler} style = {styles.button}/>
       </View>
     </View>
+    </>
   )
 }
 

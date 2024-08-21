@@ -20,19 +20,19 @@ export default function TabNavigation() {
             headerShown: false,
             tabBarLabelStyle: styles.tabLabel,
             tabBarActiveTintColor: 'orange',
-            tabBarInactiveTintColor:'blue',}}>
+            tabBarInactiveTintColor:'black',}}>
             <Tab.Screen name='Home' component={HomeScreen} options={{
                 tabBarLabel:'Home',
-                tabBarIcon: ()=> <Ionicons name="home" size={24} color="black" />}} />
+                tabBarIcon: ({focused})=> <Ionicons name="home" size={24} color= {focused ? 'orange' : 'black'} />}} />
             <Tab.Screen name='Likes' component={LikesScreen} options={{
                 tabBarLabel:'Likes',
-                tabBarIcon: ()=> <Ionicons name="heart" size={24} color="black" />}} />
+                tabBarIcon: ({focused})=> <Ionicons name="heart" size={24} color= {focused ? 'orange' : 'black'}/>}} />
             <Tab.Screen name='Messages' component={MessagesScreen} options={{
                 tabBarLabel:'Messages',
-                tabBarIcon: ()=> <MaterialCommunityIcons name="message" size={24} color="black" />}} />
+                tabBarIcon: ({focused})=> <MaterialCommunityIcons name="message" size={24} color= {focused ? 'orange' : 'black'} />}} />
             <Tab.Screen name='Profile' component={ProfileScreen} options={{
                 tabBarLabel:'Profile',
-                tabBarIcon: ()=> <Ionicons name="person" size={24} color="black" />}} />
+                tabBarIcon: ({focused})=> <Ionicons name="person" size={24} color= {focused ? 'orange' : 'black'} />}} />
         </Tab.Navigator>
     </NavigationContainer>
   )

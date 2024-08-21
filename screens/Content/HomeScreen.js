@@ -1,5 +1,7 @@
 import { View, Text, StyleSheet, SafeAreaView, ScrollView, Image, Dimensions } from 'react-native'
 import React from 'react'
+import { StatusBar } from 'expo-status-bar';
+import CategoriesList from '../../components/CategoriesList';
 
 
 const width = Dimensions.get('window').width;
@@ -9,8 +11,9 @@ export default function HomeScreen() {
 
   return (
     <>
+    <StatusBar style='inverted'/>
     <SafeAreaView>
-    <ScrollView  bounces={false}>
+    <ScrollView  >
     <View style={styles.root}>
 
       <View style={styles.greetingsView}>
@@ -20,6 +23,11 @@ export default function HomeScreen() {
 
       <View style={styles.sliderView}>
         <Image resizeMode='fill' style={[styles.sliderImage]} source={require('../../assets/images/adopt.jpg')}/>
+      </View>
+
+      <View>
+        <Text style={[styles.greetingsText, {marginLeft:12, marginTop:20}]}>Category</Text>
+        <CategoriesList style={[styles.category]} />
       </View>
 
 
@@ -52,15 +60,20 @@ const styles = StyleSheet.create({
   sliderView:{
     width:width*0.9,
     height:150,
-    marginTop:20,
+    marginTop:15,
     justifyContent:'center',
     alignSelf:'center',
     borderRadius:10,
-    backgroundColor:'blue'
   },
   sliderImage:{
     width:'100%',
     height:'100%',
     borderRadius:10
+  },
+  category:{
+    marginTop:10
+  },
+  categoryView:{
+    marginLeft:12
   }
 })
