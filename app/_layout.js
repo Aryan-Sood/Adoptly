@@ -5,7 +5,8 @@ import { StatusBar } from 'expo-status-bar';
 import { useFonts } from "expo-font";
 import { useEffect } from 'react';
 import { SplashScreen } from 'expo-router';
-
+import HomeScreen from '../screens/Content/HomeScreen';
+import TabNavigation from '../navigation/TabNavigation';
 
 
 const Stack = createNativeStackNavigator();
@@ -27,10 +28,10 @@ export default function RootLayout() {
 
   return (
     <>
-    <StatusBar style='dark' />
     <NavigationContainer independent={true}>
     <Stack.Navigator>
       <Stack.Screen name='Intro' component={IntroScreen} options={{headerShown:false}}/>
+      <Stack.Screen name='Base' component={TabNavigation} options={{headerShown: false}} />
     </Stack.Navigator>
     </NavigationContainer>
     </>
