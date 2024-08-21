@@ -28,7 +28,7 @@ export default function RootLayout() {
 
   return (
     <>
-    <StatusBar style='inverted' />
+    <StatusBar style=''/>
     <NavigationContainer independent={true}>
     <Stack.Navigator>
       <Stack.Screen name='Intro' component={IntroScreen} options={{headerShown:false}}/>
